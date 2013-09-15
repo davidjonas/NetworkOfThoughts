@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/5/NetworkOfThoughts/trunk/ServerSide/Include
+END
+error_handling.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/5/NetworkOfThoughts/trunk/ServerSide/Include/error_handling.php
+END
+DAL.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/5/NetworkOfThoughts/trunk/ServerSide/Include/DAL.php
+END
+session_init.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/5/NetworkOfThoughts/trunk/ServerSide/Include/session_init.php
+END

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="f2ef337a-f6c5-4ccb-be91-c2ae54cbf013" kpf_version="5" name="NetworkOfThoughts.komodoproject">
+<preference-set idref="f2ef337a-f6c5-4ccb-be91-c2ae54cbf013">
+  <string relative="path" id="import_dirname"></string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;.git;.hg;.bzr;*%*;tmp*.html;.DS_Store;*.swp;*.kpf;*.komodoproject;*.komodotools;application.windows;application.linux;application.macosx</string>
+  <string id="import_include_matches"></string>
+</preference-set>
+</project>

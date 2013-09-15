@@ -1,0 +1,14 @@
+[Configuration]
+background=255,255,255,255
+text=0,0,0,255
+normalNode=211,131,138,180
+newNode=226,226,226,200
+popupNode=226,226,226,200
+popupText=80,80,80,255
+connection=0,0,0,40
+tempConnection=0,0,0,255
+interaction=true
+networkDelay=60000
+[Networks]
+davidjonas,deejayripp
+test,test
