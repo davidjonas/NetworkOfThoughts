@@ -36,6 +36,8 @@ class NetworkCycle extends Thread
         break;  
       }
       
+      this.updater.freeze();
+
       String [] currentNetwork = this.context.split(this.networks[this.current], ",");
       String login = currentNetwork[0];
       String password = currentNetwork[1];
@@ -59,6 +61,8 @@ class NetworkCycle extends Thread
       {
         this.current = 0;
       }
+
+      this.updater.unfreeze();
     }
   }
  
