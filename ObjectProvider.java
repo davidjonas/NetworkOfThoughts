@@ -365,6 +365,10 @@ class ObjectProvider
                      context.random(this.cam.position.getPosition().z-worldSize-50, this.cam.position.getPosition().z-worldSize));
   }
   
+  public void resetGlobalFader()
+  {
+    this.globalFader = (float)0.0;
+  }
   
   public int getRandomObjects(int n)
   {

@@ -123,6 +123,12 @@ void setup()
       connections = new ConnectionProvider(this, objects);
       objects.connect(connections);
       connections.createConnections(ConnectionProvider.RANDOM);
+
+      //initialize updater Thread
+      updater = new ObjectUpdater(objects);
+      updater.setDaemon(true);
+      updater.start();
+
     }else
     {
       objects = new ObjectProvider(this, cam);
@@ -144,7 +150,12 @@ void setup()
         println("Error logging in automatically.");
       }
       
-      networkCycle = new NetworkCycle(this, objects, config.networks, config.networkDelay);
+      //initialize updater Thread
+      updater = new ObjectUpdater(objects);
+      updater.setDaemon(true);
+      updater.start();
+
+      networkCycle = new NetworkCycle(this, objects, updater, config.networks, config.networkDelay);
       networkCycle.setDaemon(true);
       networkCycle.start();
     }
@@ -153,11 +164,6 @@ void setup()
     hud = new HUD();
     //hud.addObject(new TitleHUD(this));     //COMMENT FOR MINIMAL INTERFACE
     hud.addObject(new AddTextObjectHUD(this, objects, cam));
-    
-    //initialize updater Thread
-    updater = new ObjectUpdater(objects);
-    updater.setDaemon(true);
-    updater.start();
     
     //initialize screensaver Thread
     screensaver = new ScreenSaver(objects);

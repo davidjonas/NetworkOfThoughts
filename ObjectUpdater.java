@@ -12,10 +12,12 @@ class ObjectUpdater extends Thread
   private DAL server;
   private long lastCall;
   private int mode;
+  private boolean frozen;
   
   ObjectUpdater(ObjectProvider objects)
   {
     this.mode = NEW_THOUGHTS_ONLY;
+    this.frozen = false;
     this.objects = objects;
     this.server = objects.getDALServer();
     this.readTime();
@@ -29,6 +31,8 @@ class ObjectUpdater extends Thread
       } catch (InterruptedException x) {
         break;  
       }
+
+      if (this.frozen) continue;
       
       //------------------- Check for new thoughts on the server ---------------------
       ArrayList newObjects;
@@ -110,7 +114,15 @@ class ObjectUpdater extends Thread
     }
   }
  
- 
+  public void freeze()
+  {
+    this.frozen = true;
+  }
+
+  public void unfreeze()
+  {
+    this.frozen = false;
+  }
   
   public void readTime()
   {

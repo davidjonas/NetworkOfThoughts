@@ -7,6 +7,7 @@ class used to cycle between a list of networks by logging in automatically
 class NetworkCycle extends Thread
 {
   private ObjectProvider objects;
+  private ObjectUpdater updater;
   private DAL server;
   private PApplet context;
   private String[] networks;
@@ -14,9 +15,10 @@ class NetworkCycle extends Thread
   private long lastCall;
   private int current;
   
-  NetworkCycle(PApplet context, ObjectProvider objects, String networks, int networkDelay)
+  NetworkCycle(PApplet context, ObjectProvider objects, ObjectUpdater updater, String networks, int networkDelay)
   {
     this.objects = objects;
+    this.updater = updater;
     this.server = objects.getDALServer();
     this.context = context;
     this.networks = this.parseNetworks(networks);
@@ -42,6 +44,7 @@ class NetworkCycle extends Thread
       {
         System.out.println("logged in successfully.");
         this.objects.getUsersFirstBrainstorm();
+        this.objects.resetGlobalFader();
       }
       else
       {
