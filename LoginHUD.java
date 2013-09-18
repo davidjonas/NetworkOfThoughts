@@ -165,6 +165,11 @@ public class LoginHUD extends HUDObject
     {
       if(login.length() != 0 && password.length() != 0)
       {
+        if(objects.getDAL().getBrainstorm() != 0)
+        {
+          objects.saveConnectionString();
+          System.out.println("saving connections...");
+        }
         if(server.login(login, password))
         {
           mode = LOGGED_IN;
@@ -187,6 +192,11 @@ public class LoginHUD extends HUDObject
     {
       if(login.length() != 0 && password.length() != 0)
       {
+        if(objects.getDAL().getBrainstorm() != 0)
+        {
+          objects.saveConnectionString();
+          System.out.println("saving connections...");
+        }
         if(server.createUser(login, password))
         {
           server.login(login, password);

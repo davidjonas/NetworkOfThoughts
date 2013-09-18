@@ -242,7 +242,7 @@ class ConnectionProvider
       
       if(intPair[0] >= 0 && intPair[1] >= 0)
       {
-        System.out.println("connecting pair: " + intPair[0] + " - " + intPair[1]);
+        //System.out.println("connecting pair: " + intPair[0] + " - " + intPair[1]);
         matrix[intPair[0]][intPair[1]] = true;
       }
       else
@@ -314,7 +314,6 @@ class ConnectionProvider
   public void connectConnStr(int i)
   {
     //TODO: get the connection string and connect this thought.
-    
   }
   
   public void connectMood(int i)

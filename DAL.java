@@ -511,6 +511,7 @@ public class DAL
     String resultString = makeCall("authenticate", attr);
     if(resultString != null && resultString.substring(1, 5).equals("true"))
     { 
+      
       this.isAnon = false;
       this.user = username;
 

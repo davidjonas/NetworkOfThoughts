@@ -32,16 +32,22 @@ class ObjectUpdater extends Thread
         break;  
       }
 
-      if (this.frozen) continue;
+      if (this.frozen) 
+      {
+        //System.out.println("Updater frozen, skipping");
+        continue;
+      }
       
       //------------------- Check for new thoughts on the server ---------------------
       ArrayList newObjects;
       if(this.server.getBrainstorm() == 0)
       {
+        //System.out.println("Getting all new objects since.");
         newObjects = server.getNewObjectsSince(this.lastCall);
       }
       else
       {
+        //System.out.println("Getting Brainstorm objects from " + this.server.getBrainstorm());
         newObjects = server.getBrainstorm(this.server.getBrainstorm());
         //newObjects = server.getNewObjectsSince(this.lastCall);
       }
@@ -59,6 +65,7 @@ class ObjectUpdater extends Thread
           Thing cur = (Thing)newObjects.get(i);
           if(this.server.getBrainstorm() == 0)
           {
+            //System.out.println("Adding thought as general brainstorm");
             if(objects.addWorldOnlyObject(cur))
             {
               objects.connectLastObject();
@@ -68,6 +75,7 @@ class ObjectUpdater extends Thread
           {
             if(!objects.existsInWorld(cur.getId()) && objects.addWorldOnlyObject(cur))
             {
+              //System.out.println("Adding new thought from brainstorm.");
               objects.connectLastObject();
             }
           }

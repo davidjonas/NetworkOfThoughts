@@ -153,6 +153,7 @@ void setup()
       //initialize updater Thread
       updater = new ObjectUpdater(objects);
       updater.setDaemon(true);
+      updater.freeze();
       updater.start();
 
       networkCycle = new NetworkCycle(this, objects, updater, config.networks, config.networkDelay);
@@ -593,10 +594,6 @@ void keyReleased()
   if (keyCode == 157)
   {
     controlKey = false;
-  }
-  else
-  {
-    println(keyCode);
   }
   
   if (errorMessage != "")

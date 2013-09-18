@@ -354,7 +354,7 @@ class ObjectProvider
   
   public int getWorldSize()
   {
-    return (int)(3 * context.log(2*(this.objects.size()+(float)0.4)) + 7)*100;
+    return (int)(3 * context.log(2*(this.objects.size()+(float)0.4)) + 7)*65;
   }
   
   public Point randomPosition()
@@ -568,7 +568,7 @@ class ObjectProvider
   
   public Thing get(int index)
   {
-    if(index < objects.size())
+    if(index >= 0 && index < objects.size())
     {
       return (Thing)objects.get(index);
     }

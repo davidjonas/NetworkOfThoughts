@@ -101,15 +101,12 @@ class ColorConfiguration
     
     for (int i=0; i < lines.length; i++) 
     {
-      System.out.println("reading a line.");
       if (lines[i].equals("[Configuration]"))
       {
-        System.out.println("Got configuration directive");
         mode = "Configuration";
       }
       else if (lines[i].equals("[Networks]"))
       {
-        System.out.println("Got networks directive");
         mode = "Networks";
       }
       else if (mode.equals("Configuration"))
@@ -120,74 +117,62 @@ class ColorConfiguration
         
         if (id.equals("background"))
         {
-          System.out.println("Got bg color");
           colorValue = context.split(value, ",");
           this.background = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("text"))
         {
-          System.out.println("Got text color");
           colorValue = context.split(value, ",");
           this.text = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("normalNode"))
         {
-          System.out.println("Got normalMode");
           colorValue = context.split(value, ",");
           this.normalNode = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("newNode"))
         {
-          System.out.println("Got newMode");
           colorValue = context.split(value, ",");
           this.newNode = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("popupNode"))
         {
-          System.out.println("Got popup node");
           colorValue = context.split(value, ",");
           this.popupNode = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("popupText"))
         {
-          System.out.println("Got popup text");
           colorValue = context.split(value, ",");
           this.popupText = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("connection"))
         {
-          System.out.println("Got connection");
           colorValue = context.split(value, ",");
           this.connection = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("tempConnection"))
         {
-          System.out.println("Got tempconnection");
           colorValue = context.split(value, ",");
           this.tempConnection = context.color(context.parseInt(colorValue[0]), context.parseInt(colorValue[1]), context.parseInt(colorValue[2]), context.parseInt(colorValue[3]));
         }
         if (id.equals("interaction"))
         {
-          System.out.println("got Interaction directive");
           if(value.equals("true"))
           {
-            System.out.println("Interaction on");
             this.interaction = true;
           }
           else
           {
-            System.out.println("Interaction off");
             this.interaction = false;
           }
         }
         if (id.equals("networkDelay"))
         {
-          System.out.println("got network delay." + value);
           this.networkDelay = context.parseInt(value); 
         }
       }
       else if (mode.equals("Networks"))
-      { System.out.println("reading networks");
+      { 
         if (networks.equals(""))
         {
           networks = lines[i];

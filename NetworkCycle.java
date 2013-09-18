@@ -23,7 +23,7 @@ class NetworkCycle extends Thread
     this.context = context;
     this.networks = this.parseNetworks(networks);
     this.networkDelay = networkDelay;
-    this.current = 0;
+    this.current = 1;
     this.readTime();
   }
   
@@ -36,7 +36,7 @@ class NetworkCycle extends Thread
         break;  
       }
       
-      this.updater.freeze();
+      //this.updater.freeze();
 
       String [] currentNetwork = this.context.split(this.networks[this.current], ",");
       String login = currentNetwork[0];
@@ -45,8 +45,8 @@ class NetworkCycle extends Thread
       if(this.objects.getDAL().login(login, password))
       {
         System.out.println("logged in successfully.");
-        this.objects.getUsersFirstBrainstorm();
         this.objects.resetGlobalFader();
+        this.objects.getUsersFirstBrainstorm();
       }
       else
       {
@@ -55,14 +55,15 @@ class NetworkCycle extends Thread
       
       if (this.current < this.networks.length-1)
       {
+        System.out.println("There are still networks, incrementing current network.");
         this.current++;
+        //this.updater.unfreeze();
       }
       else
       {
+        System.out.println("Showed all networks, resetting to the first one");
         this.current = 0;
       }
-
-      this.updater.unfreeze();
     }
   }
  
