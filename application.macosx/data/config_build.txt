@@ -1,0 +1,12 @@
+[Configuration]
+background=0,0,0,0
+text=0,85,165,225
+normalNode=211,131,138,180
+newNode=226,226,226,200
+popupNode=226,226,226,200
+popupText=80,80,80,255
+connection=242,110,121,150
+tempConnection=0,0,0,255
+interaction=true
+networkDelay=15240
+[Networks]

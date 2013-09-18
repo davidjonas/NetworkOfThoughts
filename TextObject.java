@@ -117,6 +117,8 @@ public class TextObject extends Thing
    {
      if(this.active)
      {
+       int nodeXOffset = 22;
+       int nodeYOffset = 19;
        context.pushMatrix();
        context.translate(0,0,this.position.getPosition().z);
        if(this.getMode() != TEMPORARY)
@@ -125,27 +127,27 @@ public class TextObject extends Thing
         {
           //HERE GOES THE IMAGE RENDERING
           context.tint(255, this.getAlpha());
-          context.image(this.nodeImageActive, this.position.getPosition().x-26, this.position.getPosition().y-19, 23, 23);
+          context.image(this.nodeImageActive, this.position.getPosition().x-nodeXOffset, this.position.getPosition().y-nodeYOffset, 23, 23);
           context.tint(255);
         }else if (!this.hover)
          {
           //HERE GOES THE IMAGE RENDERING
           context.tint(255, this.getAlpha());
-          context.image(this.nodeImage, this.position.getPosition().x-26, this.position.getPosition().y-19, 23, 23);
+          context.image(this.nodeImage, this.position.getPosition().x-nodeXOffset, this.position.getPosition().y-nodeYOffset, 23, 23);
           context.tint(255);
          }
          else
          {
           //HERE GOES THE IMAGE RENDERING
           context.tint(255, this.getAlpha());
-          context.image(this.nodeImageHover, this.position.getPosition().x-26, this.position.getPosition().y-19, 23, 23);
+          context.image(this.nodeImageHover, this.position.getPosition().x-nodeXOffset, this.position.getPosition().y-nodeYOffset, 23, 23);
           context.tint(255);
          }
        }else
        {
          //HERE GOES THE IMAGE RENDERING
          context.tint(255, this.getAlpha());
-         context.image(this.popupNodeImage, this.position.getPosition().x-26, this.position.getPosition().y-19, 23, 23);
+         context.image(this.popupNodeImage, this.position.getPosition().x-nodeXOffset, this.position.getPosition().y-nodeYOffset, 23, 23);
          context.tint(255);
        }
        

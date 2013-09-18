@@ -417,8 +417,8 @@ class ConnectionProvider
             {
               context.stroke((255-this.NEW_CONNECTION_AGE)+age, 0,0, context.alpha(config.connection)+age);
             }
-            context.line(objects.get(i).position.getPosition().x-(float)14.5, objects.get(i).position.getPosition().y-(float)7.5, objects.get(i).position.getPosition().z,
-                         objects.get(j).position.getPosition().x-(float)14.5, objects.get(j).position.getPosition().y-(float)7.5, objects.get(j).position.getPosition().z);
+            context.line(objects.get(i).position.getPosition().x-(float)10.50, objects.get(i).position.getPosition().y-(float)7.5, objects.get(i).position.getPosition().z,
+                         objects.get(j).position.getPosition().x-(float)10.50, objects.get(j).position.getPosition().y-(float)7.5, objects.get(j).position.getPosition().z);
             context.stroke(config.connection);
           }
         }
